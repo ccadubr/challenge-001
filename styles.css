@@ -1,13 +1,11 @@
-/* Reset */
-
+/* Resetar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Root Variables */
-
+/* Global Variables */
 :root {
   --font-family: 'Outfit', sans-serif;
   --primary-color: hsl(212, 45%, 89%);
@@ -17,7 +15,6 @@
 }
 
 /* Global Styles */
-
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
@@ -28,7 +25,7 @@ body {
   height: 100vh;
 }
 
-/* card */
+/* Card */
 .card {
   display: flex;
   flex-direction: column;
@@ -42,16 +39,21 @@ body {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-
-  img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
 }
 
-.card-wrapper {
+.card:hover {
+  cursor: pointer;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Card Container */
+.card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -59,27 +61,29 @@ body {
   gap: 1rem;
   padding: 1rem;
   height: 100%;
+  overflow: hidden;
 }
 
+/* Texto */
 .card-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+}
 
-  p {
-    font-size: 15px;
-    line-height: 140%;
-    letter-spacing: 0.2px;
-    color: var(--secondary-color)
-  }
+.card-content p {
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  color: var(--secondary-color)
+}
 
-  h2 {
-    font-size: 22px;
-    line-height: 120%;
-    letter-spacing: 0px;
-    color: var(--tertiary-color);
-  }
+.card-content h2 {
+  font-size: 22px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  color: var(--tertiary-color);
 }
 
 /* footer */
@@ -93,3 +97,15 @@ footer {
   padding: 1rem;
 }
 
+/* Animações */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
